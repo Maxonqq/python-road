@@ -12,13 +12,20 @@ def is_adult(age: int) -> bool:
     return False
 
 def main():
-    name: str = getName()
-    age: int = getAge()
 
-    print(f"Привет, {name}! Тебе {age} лет.")
-    if is_adult(age):
-        print("Доступ разрешен")
-    else:
-        print("Доступ запрещен")
+    while True:
+        name: str = getName()
+
+        if name.lower() == "стоп":
+            print("Выход из программы...")
+            break
+
+        age: int = getAge()
+
+        print(f"Привет, {name}! Тебе {age} лет.")
+        if is_adult(age):
+            print("Доступ разрешен\n")
+        else:
+            print("Доступ запрещен\n")
 
 main()
